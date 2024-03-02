@@ -1,6 +1,7 @@
 package org.example.pattern_matching;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.log4j.BasicConfigurator;
 import org.example.interfaces.Employee;
 import org.example.pattern_matching.animals.Animal;
 import org.example.pattern_matching.animals.Bat;
@@ -11,7 +12,7 @@ import org.example.pattern_matching.animals.Mammal;
 public class InstanceOfExample {
 
     public static void main(String[] args) {
-        org.apache.log4j.BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         Employee employee = new Freelancer(1L, "John Doe");
 
@@ -35,5 +36,13 @@ public class InstanceOfExample {
             case Elephant elephant -> log.info("Quite a big animal");
             default -> throw new IllegalArgumentException(randMammal + " does not exist");
         }
+
+        int result = switch (Math.random() >= 0.5 ? 1 : 0) {
+            case 1 -> 10;
+            case 0 -> 1;
+            default -> throw new IllegalStateException("Unexpected value");
+        };
+
+        log.info("The result is {}", result);
     }
 }
