@@ -2,7 +2,10 @@ package org.example.pattern_matching;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.BasicConfigurator;
+import org.example.interfaces.Dancer;
 import org.example.interfaces.Employee;
+import org.example.interfaces.Human;
+import org.example.interfaces.Singer;
 import org.example.pattern_matching.animals.Animal;
 import org.example.pattern_matching.animals.Bat;
 import org.example.pattern_matching.animals.Elephant;
@@ -44,5 +47,12 @@ public class InstanceOfExample {
         };
 
         log.info("The result is {}", result);
+
+        Human singer = new Singer();
+
+        switch (singer) {
+            case Dancer dancer -> log.info("Let's dance!");
+            case Singer singer1 -> log.info("Let's sing!");
+        }
     }
 }
