@@ -1,7 +1,6 @@
 package org.oop.models;
 
 import lombok.Builder;
-import lombok.NonNull;
 import org.oop.interfaces.Empleado;
 
 import java.util.Objects;

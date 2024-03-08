@@ -12,7 +12,7 @@ public class FullTime implements Empleado {
     @NonNull
     private final String nombre;
     private final boolean esContratoIndefinido;
-    private final int salarioBruto;
+    private final long salarioBruto;
     @NonNull
     private final String previsionSalud;
 
